@@ -7,6 +7,6 @@ class Repository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ) {
-
+    suspend fun getAllPosts() = remoteDataSource.getAllPost()
 
 }

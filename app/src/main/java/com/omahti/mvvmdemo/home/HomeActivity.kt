@@ -1,6 +1,7 @@
 package com.omahti.mvvmdemo.home
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.omahti.mvvmdemo.R
@@ -18,6 +19,12 @@ class HomeActivity : AppCompatActivity() {
             this,
             ServiceLocator.provideViewModelFactory()
         )[HomeViewModel::class.java]
+
+        val tvPosts = findViewById<TextView>(R.id.tv_posts)
+        viewModel.getAllPosts()
+        viewModel.posts.observe(this){
+            tvPosts.text = it.toString()
+        }
 
     }
 }
