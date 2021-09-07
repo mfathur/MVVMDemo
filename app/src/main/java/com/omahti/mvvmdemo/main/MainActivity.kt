@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(
             this,
-            ServiceLocator.provideViewModelFactory()
+            ServiceLocator.provideViewModelFactory(this)
         )[MainViewModel::class.java]
     }
 }

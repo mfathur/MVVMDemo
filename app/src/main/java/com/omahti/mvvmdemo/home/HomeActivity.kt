@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(
             this,
-            ServiceLocator.provideViewModelFactory()
+            ServiceLocator.provideViewModelFactory(this)
         )[HomeViewModel::class.java]
 
         val tvPosts = findViewById<TextView>(R.id.tv_posts)
